@@ -1,0 +1,22 @@
+# Jupyter-Autosave
+.ipynb_checkpoints/
+
+# Kompilierte Python-Dateien
+__pycache__/
+*.py[cod]
+
+# Virtuelle Umgebung
+.venv/
+venv/
+env/
+
+# Betriebssystem
+.DS_Store
+Thumbs.db
+
+# Abgeleitete Daten (aus data/raw neu erzeugbar)
+data/processed/
+
+# Geheimnisse
+.env
+*.key
