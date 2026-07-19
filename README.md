@@ -28,7 +28,7 @@ In beiden Modell-Notebooks werden die Daten vor jeder datenabhängigen Verarbeit
 ## Struktur
 
 ```
-preisanalyse-autoscout24/
+Autoscout24_Preisanalyse/
 ├── data/
 │   ├── raw/            Rohdaten (data.csv)
 │   └── processed/      bereinigte Daten (aus Notebook 01 erzeugt)
