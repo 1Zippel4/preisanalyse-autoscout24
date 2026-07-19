@@ -13,7 +13,7 @@ Grundlage ist der Germany Used Cars Dataset 2023 von AutoScout24, veröffentlich
 
 Die Bereinigung umfasst das Entfernen unplausibler und fehlender Werte, die Vereinheitlichung der Datentypen sowie die Zerlegung des Zulassungsdatums in Monat und Jahr. Die extrem hochpreisigen Fahrzeuge wurden als echte Ausreißer erkannt und dokumentiert, aber bewusst nicht entfernt.
 
-Die bereinigten Daten liegen nicht im Repository, da sie aus den Rohdaten reproduzierbar erzeugt werden. Die Rohdatei `data.csv` gehört in den Ordner `data/raw/`.
+Die Rohdatei `data.csv` liegt unter `data/raw/` im Repository, sodass sich alle Ergebnisse ohne zusätzlichen Download nachvollziehen lassen. Die daraus bereinigten Daten sind nicht eingecheckt, da Notebook 01 sie reproduzierbar erzeugt.
 
 ## Vorgehen
 
@@ -22,6 +22,8 @@ Das Projekt folgt dem CRISP-DM-Prozess und ist auf drei aufeinander aufbauende N
 - **01_eda.ipynb** bereitet die Daten auf und untersucht Verteilungen, Zusammenhänge und Ausreißer mit Kennzahlen und Grafiken.
 - **02_regressionsbaum.ipynb** sagt den Preis mit einem Regressionsbaum vorher und stellt die Merkmalswichtigkeiten dar.
 - **03_multiple_regression.ipynb** nutzt eine multiple lineare Regression mit logarithmierter Zielgröße und interpretiert die Koeffizienten.
+
+Die Bewertungsfunktionen liegen in `src/metrics.py`, sodass beide Modelle am identischen Maßstab gemessen werden. Jedes Notebook legt seine Kennzahlen in `results/` ab; die Vergleichstabelle am Ende von Notebook 03 wird daraus erzeugt, ohne dass Werte von Hand übertragen werden.
 
 In beiden Modell-Notebooks werden die Daten vor jeder datenabhängigen Verarbeitung in Trainings- und Testdaten getrennt, um Data Leakage zu vermeiden. Jedes Modell wird gegen ein einfaches Baseline-Modell geprüft und über eine Kreuzvalidierung auf Robustheit untersucht.
 
@@ -35,6 +37,9 @@ In beiden Modell-Notebooks werden die Daten vor jeder datenabhängigen Verarbeit
 │   ├── 01_eda.ipynb                  explorative Datenanalyse
 │   ├── 02_regressionsbaum.ipynb      Regressionsbaum
 │   └── 03_multiple_regression.ipynb  multiple lineare Regression
+├── src/
+│   └── metrics.py     gemeinsame Bewertungsfunktionen der Modell-Notebooks
+├── results/           Kennzahlen der Modelle und die Vergleichstabelle
 ├── images/            erzeugte Grafiken
 ├── requirements.txt
 └── README.md

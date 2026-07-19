@@ -1,0 +1,4 @@
+Modell,R² (Test),R² (Kreuzvalidierung),MAE (Test),MAE (Kreuzvalidierung)
+Baseline,"0,00",—,15.529 €,—
+Regressionsbaum,"0,79","0,40 ± 0,22",5.154 €,5.381 €
+Multiple Regression,"0,60","0,54 ± 0,07",6.198 €,6.479 €
